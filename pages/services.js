@@ -56,6 +56,13 @@ export default function Services(props) {
           key="description"
           content="Cutting-edge software, mobile app, and webite development services with sleek custom designs - get a free online estimate instanly!"
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | Services"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seherDevelopment.com/services" />
+        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/services" />
       </Head>
       <Grid
         item
@@ -99,7 +106,7 @@ export default function Services(props) {
             </Typography>
             <Button
               component={Link}
-              href="/mobileApps"
+              href="/mobileapps"
               variant="outlined"
               className={classes.learnButton}
               onClick={() => {
@@ -151,7 +158,7 @@ export default function Services(props) {
             </Typography>
             <Button
               component={Link}
-              href="/customSoftware"
+              href="/customsoftware"
               variant="outlined"
               className={classes.learnButton}
               onClick={() => {

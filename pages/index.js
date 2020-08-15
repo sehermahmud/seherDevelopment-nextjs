@@ -149,6 +149,13 @@ export default function LandingPage(props) {
           key="description"
           content="Pristine software custom-designed from the ground up with cutting-edge optimizations. Use our free estimate calculator to check your project cost!"
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | Seher Development"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seherDevelopment.com" />
+        <link rel="canonical" key="canonical" href="https://seherDevelopment.com" />
       </Head>
       <Grid item>
         {" "}
@@ -225,7 +232,7 @@ export default function LandingPage(props) {
             </Typography>
             <Button
               component={Link}
-              href="/customSoftware"
+              href="/customsoftware"
               variant="outlined"
               className={classes.learnButton}
               onClick={() => {
@@ -275,7 +282,7 @@ export default function LandingPage(props) {
             </Typography>
             <Button
               component={Link}
-              href="/mobileApps"
+              href="/mobileapps"
               variant="outlined"
               className={classes.learnButton}
               onClick={() => {

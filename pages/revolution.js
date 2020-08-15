@@ -47,6 +47,13 @@ export default function Revolution(props) {
           key="description"
           content="Visionary insights coupled with cutting-edge technology, is a recipe for revolution. Get a free online estimate instantly!"
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | The Revolution"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seherDevelopment.com/revolution" />
+        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/revolution" />
       </Head>
       <Grid
         item

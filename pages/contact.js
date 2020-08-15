@@ -175,7 +175,11 @@ export default function Contact(props) {
   const buttonContents = (
     <React.Fragment>
       Send Message
-      <img src="/assets/send.svg" alt="paper airplane" style={{ marginLeft: "1em" }} />
+      <img
+        src="/assets/send.svg"
+        alt="paper airplane"
+        style={{ marginLeft: "1em" }}
+      />
     </React.Fragment>
   );
 
@@ -188,6 +192,13 @@ export default function Contact(props) {
           key="description"
           content="Let us guide you through the custom software design and development process. Send us a message with any of your ideas or questions to get started!"
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | Contact Us"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seherDevelopment.com/contact" />
+        <link rel="canonical" key="canonical" href="https://seherDevelopment/contact" />
       </Head>
       <Grid
         item

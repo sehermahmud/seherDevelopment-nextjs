@@ -11,6 +11,12 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/seherLogo.png" />
           {/* PWA primary color */}
           <meta name="theme-color" content={Theme.palette.primary.main} />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="https://i.imgur.com/U0h8pU9.png" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content="Seher Development Logo" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

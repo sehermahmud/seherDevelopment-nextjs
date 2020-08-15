@@ -88,6 +88,13 @@ export default function CustomSoftware(props) {
           key="description"
           content="Cutting-edge custom software development with gorgeous designs from scratch - let us optimize your business, solving problems instead of creating new ones."
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | Custom Software Development"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seher.com/customsoftware" />
+        <link rel="canonical" key="canonical" href="seher.com/customsoftware" />
       </Head>
       <Grid
         item
@@ -164,7 +171,7 @@ export default function CustomSoftware(props) {
             <IconButton
               style={{ backgroundColor: "transparent" }}
               component={Link}
-              href="/mobileApps"
+              href="/mobileapps"
               onClick={() => props.setSelectedIndex(2)}
             >
               <img

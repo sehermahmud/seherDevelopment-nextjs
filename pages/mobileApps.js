@@ -57,6 +57,13 @@ export default function MobileApps(props) {
           key="description"
           content="Mobile Apps Made Easy | Our cutting-edge mobile app development process lets us build beautifully designed, carefully crafted apps for both iOS and Adroid."
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | iOS/Android App Development"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seherDevelopment.com/mobileapps" />
+        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/mobileapps" />
       </Head>
       <Grid
         item
@@ -75,7 +82,7 @@ export default function MobileApps(props) {
             <IconButton
               style={{ backgroundColor: "transparent" }}
               component={Link}
-              href="/customSoftware"
+              href="/customsoftware"
               onClick={() => props.setSelectedIndex(1)}
             >
               <img

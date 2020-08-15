@@ -48,6 +48,13 @@ export default function Websites(props) {
           key="description"
           content="Completely custom designed and built from scratch to be blazing fast. Optimized code, server-side rendering, and perfect responsive design | 99% PageSpeed Score"
         />
+        <meta
+          property="og:title"
+          content="Bringing West Coast Technology to the Bangladesh | Websites Development"
+          key="og:title"
+        />
+        <meta property="og:url" key="og:url" content="seherDevelopment.com/websites" />
+        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/websites" />
       </Head>
       <Grid
         item

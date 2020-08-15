@@ -169,13 +169,13 @@ export default function Header(props) {
     { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
     {
       name: "Custom Software Development",
-      link: "/customSoftware",
+      link: "/customsoftware",
       activeIndex: 1,
       selectedIndex: 1,
     },
     {
       name: "iOS/Android App Development",
-      link: "/mobileApps",
+      link: "/mobileapps",
       activeIndex: 1,
       selectedIndex: 2,
     },
