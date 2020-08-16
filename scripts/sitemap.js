@@ -4,7 +4,7 @@ const formatDate = require("./formatDate");
 
 // ROBOTS.txt
 const robotsTxt = `User-agent: *
-Sitemap: https://seherDevelopment.com/sitemap_local.xml
+Sitemap: https://seher-development.herokuapp.com/sitemap_local.xml
 Disallow:`;
 
 fs.writeFileSync("public/robots.txt", robotsTxt);
@@ -22,8 +22,8 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
       path => `<url>
     ${
       path === "/index"
-        ? `<loc>https://seherDevelopment.com</loc>`
-        : `<loc>https://seherDevelopment.com${path}</loc>`
+        ? `<loc>https://seher-development.herokuapp.com</loc>`
+        : `<loc>https://seher-development.herokuapp.com${path}</loc>`
     }
     <lastmod>${
       pathsObj[path].lastModified

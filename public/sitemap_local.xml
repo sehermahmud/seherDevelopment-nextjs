@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://seherDevelopment.com/about</loc>
+    <loc>https://seher-development.herokuapp.com/about</loc>
     <lastmod>2020-08-15</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/contact</loc>
+    <loc>https://seher-development.herokuapp.com/contact</loc>
     <lastmod>2020-08-15</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/customsoftware</loc>
+    <loc>https://seher-development.herokuapp.com/customsoftware</loc>
     <lastmod>2020-08-16</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/estimate</loc>
+    <loc>https://seher-development.herokuapp.com/estimate</loc>
     <lastmod>2020-08-15</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com</loc>
+    <loc>https://seher-development.herokuapp.com</loc>
     <lastmod>2020-08-15</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/mobileapps</loc>
+    <loc>https://seher-development.herokuapp.com/mobileapps</loc>
     <lastmod>2020-08-16</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/revolution</loc>
+    <loc>https://seher-development.herokuapp.com/revolution</loc>
     <lastmod>2020-08-16</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/services</loc>
+    <loc>https://seher-development.herokuapp.com/services</loc>
     <lastmod>2020-08-15</lastmod>
   </url>,<url>
-    <loc>https://seherDevelopment.com/websites</loc>
+    <loc>https://seher-development.herokuapp.com/websites</loc>
     <lastmod>2020-08-15</lastmod>
   </url>
 </urlset>
