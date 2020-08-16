@@ -782,7 +782,7 @@ export default function Estimate() {
           item
           style={{ marginTop: "2em", marginLeft: matchesMD ? 0 : "5em" }}
         >
-          <Typography variant="h2" align={matchesMD ? "center" : undefined}>
+          <Typography variant="h1" align={matchesMD ? "center" : undefined}>
             Estimate
           </Typography>
         </Grid>
@@ -811,7 +811,7 @@ export default function Estimate() {
             <React.Fragment key={index}>
               <Grid item>
                 <Typography
-                  variant="h2"
+                  variant="h1"
                   align="center"
                   style={{
                     fontWeight: 500,
@@ -939,7 +939,7 @@ export default function Estimate() {
       >
         <Grid container justify="center">
           <Grid item style={{ marginTop: "1em", marginBottom: "1em" }}>
-            <Typography variant="h2" align="center">
+            <Typography variant="h1" align="center">
               Estimate
             </Typography>
           </Grid>

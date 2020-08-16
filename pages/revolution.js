@@ -62,7 +62,7 @@ export default function Revolution(props) {
       >
         <Typography
           align={matchesMD ? "center" : undefined}
-          variant="h2"
+          variant="h1"
           style={{ fontFamily: "Pacifico" }}
         >
           The Revolution

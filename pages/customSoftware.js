@@ -122,7 +122,7 @@ export default function CustomSoftware(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h2">
+            <Typography align={matchesMD ? "center" : undefined} variant="h1">
               Custom Software Development
             </Typography>
           </Grid>

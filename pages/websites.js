@@ -85,7 +85,7 @@ export default function Websites(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h2">
+            <Typography align={matchesMD ? "center" : undefined} variant="h1">
               Website Development
             </Typography>
           </Grid>

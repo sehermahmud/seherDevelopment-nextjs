@@ -277,7 +277,7 @@ const arcBlue = "#ffbb66";
       textTransform: "none",
       color: "white"
     },
-    h2: {
+    h1: {
       fontFamily: "Kalam",
       fontWeight: 700,
       fontSize: "2.5rem",

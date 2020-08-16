@@ -63,7 +63,7 @@ export default function About(props) {
         className={classes.rowContainer}
         style={{ marginTop: matchesMD ? "1em" : "2em" }}
       >
-        <Typography align={matchesMD ? "center" : undefined} variant="h2">
+        <Typography align={matchesMD ? "center" : undefined} variant="h1">
           About Us
         </Typography>
       </Grid>

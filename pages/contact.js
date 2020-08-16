@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from "next/head";
+import axios from "axios";
 import Link from "../src/Link";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -218,7 +219,7 @@ export default function Contact(props) {
             <Grid item>
               <Typography
                 align={matchesMD ? "center" : undefined}
-                variant="h2"
+                variant="h1"
                 style={{ lineHeight: 1 }}
               >
                 Contact Us
@@ -500,7 +501,7 @@ export default function Contact(props) {
         >
           <Grid container direction="column">
             <Grid item>
-              <Typography align={matchesMD ? "center" : undefined} variant="h2">
+              <Typography align={matchesMD ? "center" : undefined} variant="h1">
                 Simple Software.
                 <br />
                 Revolutionary Results.

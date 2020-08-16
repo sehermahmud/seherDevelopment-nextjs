@@ -71,7 +71,7 @@ export default function CallToAction(props) {
       >
         <Grid container direction="column">
           <Grid item>
-            <Typography variant="h2">
+            <Typography variant="h1">
               Simple Software.
               <br />
               Revolutionary Results.
