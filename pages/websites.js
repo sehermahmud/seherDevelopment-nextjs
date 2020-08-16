@@ -53,8 +53,8 @@ export default function Websites(props) {
           content="Bringing West Coast Technology to the Bangladesh | Websites Development"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/websites" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/websites" />
+        <meta property="og:url" key="og:url" content="https://seher-development.herokuapp.com/websites" />
+        <link rel="canonical" key="canonical" href="https://seher-development.herokuapp.com/websites" />
       </Head>
       <Grid
         item

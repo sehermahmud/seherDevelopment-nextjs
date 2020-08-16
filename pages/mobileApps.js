@@ -65,12 +65,12 @@ export default function MobileApps(props) {
         <meta
           property="og:url"
           key="og:url"
-          content="seherDevelopment.com/mobileapps"
+          content="https://seher-development.herokuapp.com/mobileapps"
         />
         <link
           rel="canonical"
           key="canonical"
-          href="https://seherDevelopment.com/mobileapps"
+          href="https://seher-development.herokuapp.com/mobileapps"
         />
       </Head>
       <Grid

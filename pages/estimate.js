@@ -768,8 +768,8 @@ export default function Estimate() {
           content="Bringing West Coast Technology to the Bangladesh | Free Estimate"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment/estimate" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/estimate" />
+        <meta property="og:url" key="og:url" content="https://seher-development.herokuapp.com/estimate" />
+        <link rel="canonical" key="canonical" href="https://seher-development.herokuapp.com/estimate" />
       </Head>
       <Grid
         item

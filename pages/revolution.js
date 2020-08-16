@@ -55,12 +55,12 @@ export default function Revolution(props) {
         <meta
           property="og:url"
           key="og:url"
-          content="seherDevelopment.com/revolution"
+          content="https://seher-development.herokuapp.com/revolution"
         />
         <link
           rel="canonical"
           key="canonical"
-          href="https://seherDevelopment.com/revolution"
+          href="https://seher-development.herokuapp.com/revolution"
         />
       </Head>
       <Grid

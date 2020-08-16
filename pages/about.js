@@ -55,8 +55,8 @@ export default function About(props) {
           content="Bringing West Coast Technology to the Bangladesh | About Us"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/about" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/about" />
+        <meta property="og:url" key="og:url" content="https://seher-development.herokuapp.com/about" />
+        <link rel="canonical" key="canonical" href="https://seher-development.herokuapp.com/about" />
       </Head>
       <Grid
         item

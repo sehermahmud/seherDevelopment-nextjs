@@ -98,9 +98,9 @@ export default function CustomSoftware(props) {
         <meta
           property="og:url"
           key="og:url"
-          content="seher.com/customsoftware"
+          content="https://seher-development.herokuapp.com/customsoftware"
         />
-        <link rel="canonical" key="canonical" href="seher.com/customsoftware" />
+        <link rel="canonical" key="canonical" href="https://seher-development.herokuapp.com/customsoftware" />
       </Head>
       <Grid
         item

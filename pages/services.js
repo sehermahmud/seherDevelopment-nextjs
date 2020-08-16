@@ -61,8 +61,8 @@ export default function Services(props) {
           content="Bringing West Coast Technology to the Bangladesh | Services"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/services" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/services" />
+        <meta property="og:url" key="og:url" content="https://seher-development.herokuapp.com/services" />
+        <link rel="canonical" key="canonical" href="https://seher-development.herokuapp.com/services" />
       </Head>
       <Grid
         item
