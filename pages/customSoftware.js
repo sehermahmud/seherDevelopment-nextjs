@@ -382,8 +382,8 @@ export default function CustomSoftware(props) {
         alignItems={matchesMD ? "center" : undefined}
         direction={matchesMD ? "column" : "row"}
         justify={matchesMD ? "center" : "space-between"}
-        style={{ display: matchesMD ? "grid" : undefined }}
         className={classes.rowContainer}
+        style={{ display: matchesMD ? "grid" : undefined }}
       >
         <Grid
           item
@@ -487,7 +487,7 @@ export default function CustomSoftware(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item>
+      <Grid item style={{ marginTop: "20em" }}>
         <CallToAction setValue={props.setValue} />
       </Grid>
     </Grid>
