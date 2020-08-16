@@ -62,8 +62,16 @@ export default function MobileApps(props) {
           content="Bringing West Coast Technology to the Bangladesh | iOS/Android App Development"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/mobileapps" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/mobileapps" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="seherDevelopment.com/mobileapps"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://seherDevelopment.com/mobileapps"
+        />
       </Head>
       <Grid
         item
@@ -183,7 +191,10 @@ export default function MobileApps(props) {
           <Lottie
             options={defaultOptions}
             isStopped={false}
-            style={{ maxWidth: "20em" }}
+            style={{
+              maxWidth: matchesMD ? "15em" : "20em",
+              height: matchesMD ? "20em" : undefined,
+            }}
           />
         </Grid>
         <Grid item container direction="column" md>
@@ -221,7 +232,7 @@ export default function MobileApps(props) {
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ marginBottom: "15em" }}
+        style={{ marginBottom: "15em", display: matchesMD ? "grid" : undefined }}
       >
         <Grid item container direction="column" alignItems="center" md>
           <Grid item>
@@ -264,11 +275,14 @@ export default function MobileApps(props) {
             </Typography>
           </Grid>
           <Grid item>
-            <img src="/assets/increaseEngagement.svg" alt="app with notification" />
+            <img
+              src="/assets/increaseEngagement.svg"
+              alt="app with notification"
+            />
           </Grid>
         </Grid>
       </Grid>
-			<Grid item>
+      <Grid item>
         <CallToAction setValue={props.setValue} />
       </Grid>
     </Grid>

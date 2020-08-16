@@ -10,15 +10,15 @@ import technologyAnimation from "../src/animations/technologyAnimation/data.json
 
 import CallToAction from "../src/ui/CallToAction";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "1.5em",
-      paddingRight: "1.5em"
-    }
-  }
+      paddingRight: "1.5em",
+    },
+  },
 }));
 
 export default function Revolution(props) {
@@ -32,8 +32,8 @@ export default function Revolution(props) {
     autoplay: true,
     animationData: technologyAnimation,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }
+      preserveAspectRatio: "xMidYMid slice",
+    },
   };
 
   return (
@@ -52,8 +52,16 @@ export default function Revolution(props) {
           content="Bringing West Coast Technology to the Bangladesh | The Revolution"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/revolution" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/revolution" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="seherDevelopment.com/revolution"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://seherDevelopment.com/revolution"
+        />
       </Head>
       <Grid
         item
@@ -83,7 +91,7 @@ export default function Revolution(props) {
             style={{
               maxWidth: matchesSM ? 300 : "40em",
               marginRight: matchesMD ? 0 : "5em",
-              marginBottom: matchesMD ? "5em" : 0
+              marginBottom: matchesMD ? "5em" : 0,
             }}
           />
         </Grid>
@@ -455,7 +463,12 @@ export default function Revolution(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src="/assets/reviewIcon.svg" alt="magnifying glass" width="100%" />
+          <img
+            src="/assets/reviewIcon.svg"
+            alt="magnifying glass"
+            width="100%"
+            style={{ maxWidth: "40em" }}
+          />
         </Grid>
       </Grid>
       <Grid
@@ -565,7 +578,12 @@ export default function Revolution(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src="/assets/reviewIcon.svg" alt="magnifying glass" width="100%" />
+          <img
+            src="/assets/reviewIcon.svg"
+            alt="magnifying glass"
+            width="100%"
+            style={{ maxWidth: "40em" }}
+          />
         </Grid>
       </Grid>
       <Grid
@@ -856,7 +874,11 @@ export default function Revolution(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src="/assets/iterateIcon.svg" alt="falling dominoes" width="100%" />
+          <img
+            src="/assets/iterateIcon.svg"
+            alt="falling dominoes"
+            width="100%"
+          />
         </Grid>
       </Grid>
       <Grid item>

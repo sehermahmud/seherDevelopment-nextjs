@@ -82,7 +82,9 @@ export default function CustomSoftware(props) {
   return (
     <Grid container direction="column">
       <Head>
-        <title key="title">Custom Software Development and Design - Free Estimate</title>
+        <title key="title">
+          Custom Software Development and Design - Free Estimate
+        </title>
         <meta
           name="description"
           key="description"
@@ -93,7 +95,11 @@ export default function CustomSoftware(props) {
           content="Bringing West Coast Technology to the Bangladesh | Custom Software Development"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seher.com/customsoftware" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="seher.com/customsoftware"
+        />
         <link rel="canonical" key="canonical" href="seher.com/customsoftware" />
       </Head>
       <Grid
@@ -245,8 +251,9 @@ export default function CustomSoftware(props) {
         container
         alignItems={matchesMD ? "center" : undefined}
         direction={matchesMD ? "column" : "row"}
-        justify="space-between"
+        justify={matchesMD ? "center" : "space-between"}
         className={classes.rowContainer}
+        style={{ display: matchesMD ? "grid" : undefined }}
       >
         <Grid
           item
@@ -294,7 +301,13 @@ export default function CustomSoftware(props) {
             <Lottie
               options={documentsOptions}
               isStopped={false}
-              style={{ maxHeight: 275, maxWidth: 275, minHeight: 250 }}
+              style={{
+                maxHeight: 275,
+                maxWidth: 275,
+                minHeight: 250,
+                height: "22em",
+                width: "20em",
+              }}
             />
           </Grid>
         </Grid>
@@ -368,8 +381,8 @@ export default function CustomSoftware(props) {
         container
         alignItems={matchesMD ? "center" : undefined}
         direction={matchesMD ? "column" : "row"}
-        justify="space-between"
-        style={{ marginBottom: "20em" }}
+        justify={matchesMD ? "center" : "space-between"}
+        style={{ display: matchesMD ? "grid" : undefined }}
         className={classes.rowContainer}
       >
         <Grid
@@ -431,7 +444,12 @@ export default function CustomSoftware(props) {
             <Lottie
               options={uxOptions}
               isStopped={false}
-              style={{ maxHeight: 310, maxWidth: 155 }}
+              style={{
+                maxHeight: 310,
+                maxWidth: 155,
+                height: "20em",
+                width: "18em",
+              }}
             />
           </Grid>
           <Grid item container direction="column" md>

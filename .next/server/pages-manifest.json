@@ -1,15 +1,7 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.html",
-  "/contact": "pages/contact.html",
-  "/customsoftware": "pages/customsoftware.html",
-  "/estimate": "pages/estimate.html",
-  "/": "pages/index.html",
-  "/mobileapps": "pages/mobileapps.html",
-  "/revolution": "pages/revolution.html",
-  "/services": "pages/services.html",
-  "/websites": "pages/websites.html",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html"
+  "/customsoftware": "pages/customsoftware.js",
+  "/services": "pages/services.js"
 }
