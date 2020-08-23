@@ -2,20 +2,20 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Link from "../Link"; 
+import Link from "../Link";
 import Button from "@material-ui/core/Button";
 import ButtonArrow from "./ButtonArrow";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   learnButton: {
     ...theme.typography.learnButton,
     fontSize: "0.7rem",
     height: 35,
     padding: 5,
     [theme.breakpoints.down("sm")]: {
-      marginBottom: "2em"
-    }
+      marginBottom: "2em",
+    },
   },
   background: {
     backgroundImage: `url("/assets/background.jpg")`,
@@ -27,8 +27,8 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     [theme.breakpoints.down("md")]: {
       backgroundImage: `url("/assets/mobileBackground.jpg")`,
-      backgroundAttachment: "inherit"
-    }
+      backgroundAttachment: "inherit",
+    },
   },
   estimateButton: {
     ...theme.typography.estimate,
@@ -40,13 +40,13 @@ const useStyles = makeStyles(theme => ({
     marginRight: "5em",
     marginLeft: "2em",
     "&:hover": {
-      backgroundColor: theme.palette.primary.light
+      backgroundColor: theme.palette.primary.light,
     },
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
-      marginRight: 0
-    }
-  }
+      marginRight: 0,
+    },
+  },
 }));
 
 export default function CallToAction(props) {
@@ -66,17 +66,25 @@ export default function CallToAction(props) {
         item
         style={{
           marginLeft: matchesSM ? 0 : "5em",
-          textAlign: matchesSM ? "center" : "inherit"
+          textAlign: matchesSM ? "center" : "inherit",
         }}
       >
         <Grid container direction="column">
           <Grid item>
-            <Typography variant="h1">
+            <Typography
+              variant="h1"
+              gutterBottom
+              style={{ lineHeight: matchesSM ? 1.1 : null }}
+            >
               Simple Software.
               <br />
+              {matchesSM && <br />}
               Revolutionary Results.
             </Typography>
-            <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }}>
+            <Typography
+              variant="subtitle2"
+              style={{ fontSize: matchesSM ? "1.25em" : "1.5rem" }}
+            >
               Take advantage of the 21st Century.
             </Typography>
             <Grid container justify={matchesSM ? "center" : undefined} item>

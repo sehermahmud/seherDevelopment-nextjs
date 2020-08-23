@@ -16,6 +16,7 @@
     "prop-types": "latest",
     "react": "^16.13.1",
     "react-dom": "latest",
+    "react-ga": "^3.1.2",
     "react-lottie": "^1.2.3"
   },
   "scripts": {

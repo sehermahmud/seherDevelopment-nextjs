@@ -98,9 +98,13 @@ export default function CustomSoftware(props) {
         <meta
           property="og:url"
           key="og:url"
-          content="seher.com/customsoftware"
+          content="https://seher-development.vercel.app/customsoftware"
         />
-        <link rel="canonical" key="canonical" href="seher.com/customsoftware" />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://seher-development.vercel.app/customsoftware"
+        />
       </Head>
       <Grid
         item
@@ -128,7 +132,15 @@ export default function CustomSoftware(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h1"
+              style={{
+                lineHeight: matchesXS ? 1.1 : null,
+                marginBottom: matchesXS ? "0.5em" : null,
+                fontSize: "2.25em",
+              }}
+            >
               Custom Software Development
             </Typography>
           </Grid>
@@ -297,7 +309,7 @@ export default function CustomSoftware(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md>
+          <Grid item md style={{marginTop: matchesSM ? "2em" : null}}> 
             <Lottie
               options={documentsOptions}
               isStopped={false}
@@ -318,7 +330,7 @@ export default function CustomSoftware(props) {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md>
+          <Grid item md style={{marginBottom: matchesSM ? "2em" : null}}>
             <Lottie
               options={scaleOptions}
               isStopped={false}
@@ -425,7 +437,7 @@ export default function CustomSoftware(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md>
+          <Grid item md style={{marginTop: matchesSM ? "2em" : null}}>
             <Lottie
               options={automationOptions}
               isStopped={false}
@@ -440,7 +452,7 @@ export default function CustomSoftware(props) {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md>
+          <Grid item md style={{marginBottom: matchesSM ? "2em" : null}}>
             <Lottie
               options={uxOptions}
               isStopped={false}

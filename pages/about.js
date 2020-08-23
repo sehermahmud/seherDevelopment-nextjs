@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "1.5em",
       paddingRight: "1.5em",
     },
+    [theme.breakpoints.down("xs")]: {
+      paddingLeft: "1em",
+      paddingRight: "1em",
+    },
   },
   avatar: {
     height: "25em",
@@ -55,8 +59,8 @@ export default function About(props) {
           content="Bringing West Coast Technology to the Bangladesh | About Us"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/about" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/about" />
+        <meta property="og:url" key="og:url" content="https://seher-development.vercel.app/about" />
+        <link rel="canonical" key="canonical" href="https://seher-development.vercel.app/about" />
       </Head>
       <Grid
         item

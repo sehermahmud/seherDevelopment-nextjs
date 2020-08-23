@@ -19,6 +19,16 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Hidden from "@material-ui/core/Hidden";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import MenuList from "@material-ui/core/MenuList";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Grid from "@material-ui/core/Grid";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import heartanimation from "../animations/heartanimation/heart.json";
 
@@ -86,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.redPink,
     color: "white",
     borderRadius: "0px",
+    zIndex: 1302,
   },
   menuItem: {
     ...theme.typography.tab,
@@ -124,10 +135,33 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     zIndex: theme.zIndex.modal + 1,
   },
+  expansion: {
+    backgroundColor: theme.palette.common.redPink,
+    borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+    "&.Mui-expanded": {
+      margin: 0,
+      borderBottom: 0,
+    },
+    "&::before": {
+      backgroundColor: "rgba(0, 0, 0, 0)",
+    },
+  },
+  expansionDetails: {
+    padding: 0,
+    backgroundColor: theme.palette.secondary.light,
+  },
+  expansionSummary: {
+    padding: "0 24px 0 16px",
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 0.08)",
+    },
+    backgroundColor: (props) =>
+      props.value === 1 ? "rgba(0, 0, 0, 0.14)" : "inherit",
+  },
 }));
 
 export default function Header(props) {
-  const classes = useStyles();
+  const classes = useStyles(props);
   const theme = useTheme();
   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -165,25 +199,31 @@ export default function Header(props) {
     setOpenMenu(false);
   };
 
+  function handleListKeyDown(event) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
+
   const menuOptions = [
-    { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
     {
       name: "Custom Software Development",
       link: "/customsoftware",
       activeIndex: 1,
-      selectedIndex: 1,
+      selectedIndex: 0,
     },
     {
       name: "iOS/Android App Development",
       link: "/mobileapps",
       activeIndex: 1,
-      selectedIndex: 2,
+      selectedIndex: 1,
     },
     {
       name: "Website Development",
       link: "/websites",
       activeIndex: 1,
-      selectedIndex: 3,
+      selectedIndex: 2,
     },
   ];
 
@@ -245,6 +285,7 @@ export default function Header(props) {
             aria-owns={route.ariaOwns}
             aria-haspopup={route.ariaPopup}
             onMouseOver={route.mouseOver}
+            onMouseLeave={() => setOpenMenu(false)}
             style={{ color: "white" }}
           />
         ))}
@@ -259,7 +300,62 @@ export default function Header(props) {
       >
         Free Estimate
       </Button>
-      <Menu
+      <Popper
+        open={openMenu}
+        anchorEl={anchorEl}
+        placement="bottom-start"
+        role={undefined}
+        transition
+        disablePortal
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin: "top left",
+            }}
+          >
+            <Paper
+              classes={{ paper: classes.menu }}
+              elevation={0}
+              style={{ backgroundColor: "#ff66a3" }}
+            >
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList
+                  onMouseOver={() => setOpenMenu(true)}
+                  onMouseLeave={handleClose}
+                  disablePadding
+                  autoFocusItem={false}
+                  id="simple-menu"
+                  onKeyDown={handleListKeyDown}
+                >
+                  {menuOptions.map((option, i) => (
+                    <MenuItem
+                      key={`${option}${i}`}
+                      component={Link}
+                      href={option.link}
+                      classes={{ root: classes.menuItem }}
+                      onClick={(event) => {
+                        handleMenuItemClick(event, i);
+                        props.setValue(1);
+                        handleClose();
+                      }}
+                      selected={
+                        i === props.selectedIndex &&
+                        props.value === 1 &&
+                        window.location.pathname !== "/services"
+                      }
+                    >
+                      {option.name}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
+      {/* <Menu
         id="simple-menu"
         anchorEl={anchorEl}
         open={openMenu}
@@ -288,7 +384,7 @@ export default function Header(props) {
             {option.name}
           </MenuItem>
         ))}
-      </Menu>
+      </Menu> */}
     </React.Fragment>
   );
 
@@ -304,25 +400,91 @@ export default function Header(props) {
       >
         <div className={classes.toolbarMargin} />
         <List disablePadding>
-          {routes.map((route) => (
-            <ListItem
-              divider
-              key={`${route}${route.activeIndex}`}
-              button
-              component={Link}
-              href={route.link}
-              selected={props.value === route.activeIndex}
-              classes={{ selected: classes.drawerItemSelected }}
-              onClick={() => {
-                setOpenDrawer(false);
-                props.setValue(route.activeIndex);
-              }}
-            >
-              <ListItemText className={classes.drawerItem} disableTypography>
-                {route.name}
-              </ListItemText>
-            </ListItem>
-          ))}
+          {routes.map((route) =>
+            route.name === "Services" ? (
+              <Accordion
+                elevation={0}
+                key={route.name}
+                classes={{ root: classes.expansion }}
+              >
+                <AccordionSummary
+                  classes={{ root: classes.expansionSummary }}
+                  expandIcon={<ExpandMoreIcon color="primary" />}
+                >
+                  <ListItemText
+                    className={classes.drawerItem}
+                    disableTypography
+                    style={{ opacity: props.value === 1 ? 1 : null }}
+                    onClick={() => {
+                      setOpenDrawer(false);
+                      props.setValue(route.activeIndex);
+                    }}
+                  >
+                    <Link href={route.link} style={{ color: "white" }}>
+                      {route.name}
+                    </Link>
+                  </ListItemText>
+                </AccordionSummary>
+                <AccordionDetails classes={{ root: classes.expansionDetails }}>
+                  <Grid container direction="column">
+                    {menuOptions.map((route) => (
+                      <Grid item>
+                        <ListItem
+                          divider
+                          key={`${route}${route.selectedIndex}`}
+                          button
+                          component={Link}
+                          href={route.link}
+                          selected={
+                            props.selectedIndex === route.selectedIndex &&
+                            props.value === 1 &&
+                            window.location.pathname !== "/services"
+                          }
+                          classes={{ selected: classes.drawerItemSelected }}
+                          onClick={() => {
+                            setOpenDrawer(false);
+                            props.setSelectedIndex(route.selectedIndex);
+                          }}
+                        >
+                          <ListItemText
+                            className={classes.drawerItem}
+                            disableTypography
+                          >
+                            {route.name
+                              .split(" ")
+                              .filter((word) => word !== "Development")
+                              .join(" ")}
+                            <br />
+                            <span style={{ fontSize: "0.75rem" }}>
+                              Development
+                            </span>
+                          </ListItemText>
+                        </ListItem>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </AccordionDetails>
+              </Accordion>
+            ) : (
+              <ListItem
+                divider
+                key={`${route}${route.activeIndex}`}
+                button
+                component={Link}
+                href={route.link}
+                selected={props.value === route.activeIndex}
+                classes={{ selected: classes.drawerItemSelected }}
+                onClick={() => {
+                  setOpenDrawer(false);
+                  props.setValue(route.activeIndex);
+                }}
+              >
+                <ListItemText className={classes.drawerItem} disableTypography>
+                  {route.name}
+                </ListItemText>
+              </ListItem>
+            )
+          )}
           <ListItem
             onClick={() => {
               setOpenDrawer(false);

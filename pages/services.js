@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: 25,
     },
+    [theme.breakpoints.down("sm")]: {
+      padding: 5,
+    },
   },
   learnButton: {
     ...theme.typography.learnButton,
@@ -44,6 +47,7 @@ export default function Services(props) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid container direction="column">
@@ -61,8 +65,16 @@ export default function Services(props) {
           content="Bringing West Coast Technology to the Bangladesh | Services"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/services" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/services" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="https://seher-development.vercel.app/services"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://seher-development.vercel.app/services"
+        />
       </Head>
       <Grid
         item
@@ -205,7 +217,8 @@ export default function Services(props) {
               Reach More. Discover More. Sell More.
             </Typography>
             <Typography variant="subtitle1">
-              Optimized for Search Engines, built for speed.
+              Optimized for Search Engines, {matchesXS && <br />}built for
+              speed.
             </Typography>
             <Button
               component={Link}

@@ -65,12 +65,12 @@ export default function MobileApps(props) {
         <meta
           property="og:url"
           key="og:url"
-          content="seherDevelopment.com/mobileapps"
+          content="https://seher-development.vercel.app/mobileapps"
         />
         <link
           rel="canonical"
           key="canonical"
-          href="https://seherDevelopment.com/mobileapps"
+          href="https://seher-development.vercel.app/mobileapps"
         />
       </Head>
       <Grid
@@ -102,7 +102,15 @@ export default function MobileApps(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h1"
+              style={{
+                lineHeight: matchesXS ? 1.1 : null,
+                marginBottom: matchesXS ? "0.5em" : null,
+                fontSize: "2.25em",
+              }}
+            >
               iOS/Android App Development
             </Typography>
           </Grid>
@@ -232,7 +240,10 @@ export default function MobileApps(props) {
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ marginBottom: "15em", display: matchesMD ? "grid" : undefined }}
+        style={{
+          marginBottom: "15em",
+          display: matchesMD ? "grid" : undefined,
+        }}
       >
         <Grid item container direction="column" alignItems="center" md>
           <Grid item>

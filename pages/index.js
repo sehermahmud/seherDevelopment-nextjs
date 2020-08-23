@@ -90,6 +90,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: 25,
     },
+    [theme.breakpoints.down("xs")]: {
+      padding: 5,
+    },
   },
   revolutionBackground: {
     backgroundImage: `url("/assets/repeatingBackground.svg")`,
@@ -154,8 +157,16 @@ export default function LandingPage(props) {
           content="Bringing West Coast Technology to the Bangladesh | Seher Development"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="https://seher-development.vercel.app"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://seher-development.vercel.app"
+        />
       </Head>
       <Grid item>
         {" "}
@@ -328,7 +339,8 @@ export default function LandingPage(props) {
               Reach More. Discover More. Sell More.
             </Typography>
             <Typography variant="subtitle1">
-              Optimized for Search Engines, built for speed.
+              Optimized for Search Engines, {matchesXS && <br />}built for
+              speed.
             </Typography>
             <Button
               component={Link}

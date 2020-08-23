@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Head from "next/head";
 import axios from "axios";
 import { cloneDeep } from "lodash";
@@ -310,6 +310,8 @@ export default function Estimate() {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const myRef = useRef(null);
+
   const [questions, setQuestions] = useState(defaultQuestions);
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -350,6 +352,10 @@ export default function Estimate() {
   };
 
   const nextQuestion = () => {
+    if (matchesSM) {
+      window.scrollTo(0, myRef.current.offsetTop + 75);
+    }
+
     const newQuestions = cloneDeep(questions);
     const currentlyActive = newQuestions.filter((question) => question.active);
     const activeIndex = currentlyActive[0].id - 1;
@@ -362,6 +368,10 @@ export default function Estimate() {
   };
 
   const previousQuestion = () => {
+    if (matchesSM) {
+      window.scrollTo(0, myRef.current.offsetTop + 75);
+    }
+
     const newQuestions = cloneDeep(questions);
     const currentlyActive = newQuestions.filter((question) => question.active);
     const activeIndex = currentlyActive[0].id - 1;
@@ -417,6 +427,9 @@ export default function Estimate() {
 
     switch (newSelected.title) {
       case "Custom Software Development":
+        if (matchesSM) {
+          window.scrollTo(0, myRef.current.offsetTop + 75);
+        }
         setQuestions(softwareQuestions);
         setService(newSelected.title);
         setPlatforms([]);
@@ -426,6 +439,9 @@ export default function Estimate() {
         setUsers("");
         break;
       case "iOS/Android App Development":
+        if (matchesSM) {
+          window.scrollTo(0, myRef.current.offsetTop + 75);
+        }
         setQuestions(softwareQuestions);
         setService(newSelected.title);
         setPlatforms([]);
@@ -435,6 +451,9 @@ export default function Estimate() {
         setUsers("");
         break;
       case "Website Development":
+        if (matchesSM) {
+          window.scrollTo(0, myRef.current.offsetTop + 75);
+        }
         setQuestions(websiteQuestions);
         setService(newSelected.title);
         setPlatforms([]);
@@ -619,8 +638,18 @@ export default function Estimate() {
     let disabled = true;
 
     const emptySelections = questions
+      .filter(
+        (question) => question.title !== "Which features do you expect to use?"
+      )
       .map((question) => question.options.filter((option) => option.selected))
       .filter((question) => question.length === 0);
+
+    const featuresSelected = questions
+      .filter(
+        (question) => question.title === "Which features do you expect to use?"
+      )
+      .map((question) => question.options.filter((option) => option.selected))
+      .filter((selections) => selections.length > 0);
 
     if (questions.length === 2) {
       if (emptySelections.length === 1) {
@@ -628,12 +657,7 @@ export default function Estimate() {
       }
     } else if (questions.length === 1) {
       disabled = true;
-    } else if (
-      emptySelections.length < 3 &&
-      questions[questions.length - 1].options.filter(
-        (option) => option.selected
-      ).length > 0
-    ) {
+    } else if (emptySelections.length === 1 && featuresSelected.length > 0) {
       disabled = false;
     }
 
@@ -757,7 +781,9 @@ export default function Estimate() {
   return (
     <Grid container direction="row">
       <Head>
-        <title key="title">Free Custom Software Estimate | Seher Development</title>
+        <title key="title">
+          Free Custom Software Estimate | Seher Development
+        </title>
         <meta
           name="description"
           key="description"
@@ -768,8 +794,16 @@ export default function Estimate() {
           content="Bringing West Coast Technology to the Bangladesh | Free Estimate"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment/estimate" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment.com/estimate" />
+        <meta
+          property="og:url"
+          key="og:url"
+          content="https://seher-development.vercel.app/estimate"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://seher-development.vercel.app/estimate"
+        />
       </Head>
       <Grid
         item
@@ -809,7 +843,7 @@ export default function Estimate() {
           .filter((question) => question.active)
           .map((question, index) => (
             <React.Fragment key={index}>
-              <Grid item>
+              <Grid item ref={myRef}>
                 <Typography
                   variant="h1"
                   align="center"
@@ -839,8 +873,8 @@ export default function Estimate() {
                     item
                     container
                     direction="column"
-										md
-										key={index}
+                    md
+                    key={index}
                     component={Button}
                     onClick={() => handleSelect(option.id)}
                     style={{
@@ -891,7 +925,9 @@ export default function Estimate() {
             >
               <img
                 src={
-                  navigationPreviousDisabled() ? "/assets/backArrowDisabled.svg" : "/assets/backArrow.svg"
+                  navigationPreviousDisabled()
+                    ? "/assets/backArrowDisabled.svg"
+                    : "/assets/backArrow.svg"
                 }
                 alt="Previous question"
               />
@@ -904,7 +940,9 @@ export default function Estimate() {
             >
               <img
                 src={
-                  navigationNextDisabled() ? "/assets/forwardArrowDisabled.svg" : "/assets/forwardArrow.svg"
+                  navigationNextDisabled()
+                    ? "/assets/forwardArrowDisabled.svg"
+                    : "/assets/forwardArrow.svg"
                 }
                 alt="forward question"
               />

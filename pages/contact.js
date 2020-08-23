@@ -198,8 +198,8 @@ export default function Contact(props) {
           content="Bringing West Coast Technology to the Bangladesh | Contact Us"
           key="og:title"
         />
-        <meta property="og:url" key="og:url" content="seherDevelopment.com/contact" />
-        <link rel="canonical" key="canonical" href="https://seherDevelopment/contact" />
+        <meta property="og:url" key="og:url" content="https://seher-development.vercel.app/contact" />
+        <link rel="canonical" key="canonical" href="https://seher-development.vercel.app/contact" />
       </Head>
       <Grid
         item
