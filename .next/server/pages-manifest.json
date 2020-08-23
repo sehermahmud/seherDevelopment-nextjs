@@ -2,9 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
   "/": "pages/index.js",
-  "/customsoftware": "pages/customsoftware.js",
-  "/websites": "pages/websites.js",
-  "/mobileapps": "pages/mobileapps.js"
+  "/revolution": "pages/revolution.js"
 }

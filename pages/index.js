@@ -13,6 +13,12 @@ import CardContent from "@material-ui/core/CardContent";
 
 import CallToAction from "../src/ui/CallToAction";
 
+import {
+  LazyLoadImage,
+  LazyLoadComponent
+} from "react-lazy-load-image-component";
+
+
 import animationData from "../src/animations/loading-animation.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -117,6 +123,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   infoBackground: {
+    position: "absolute",
+    zIndex: -1,
     backgroundImage: `url("/assets/infoBackground.svg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -260,7 +268,7 @@ export default function LandingPage(props) {
             </Button>
           </Grid>
           <Grid item>
-            <img
+            <LazyLoadImage
               className={classes.icon}
               alt="custom software icon"
               src="/assets/customSoftware.svg"
@@ -310,7 +318,7 @@ export default function LandingPage(props) {
             </Button>
           </Grid>
           <Grid item style={{ marginRight: matchesSM ? 0 : "5em" }}>
-            <img
+            <LazyLoadImage
               className={classes.icon}
               alt="mobile phone icon"
               src="/assets/mobileIcon.svg"
@@ -361,7 +369,7 @@ export default function LandingPage(props) {
             </Button>
           </Grid>
           <Grid item>
-            <img
+            <LazyLoadImage
               className={classes.icon}
               alt="website icon"
               src="/assets/websiteIcon.svg"
@@ -412,17 +420,18 @@ export default function LandingPage(props) {
               </Grid>
             </CardContent>
           </Card>
-          <div className={classes.revolutionBackground} />
+          <LazyLoadComponent threshold={850}>
+            <div className={classes.revolutionBackground} />
+          </LazyLoadComponent>
         </Grid>
       </Grid>
       <Grid item>
         {/*-----Information Block-----*/}
         <Grid
           container
-          style={{ height: "80em" }}
+          style={{ height: "57.4em" }}
           alignItems="center"
           direction="row"
-          className={classes.infoBackground}
         >
           <Grid
             item
@@ -495,11 +504,16 @@ export default function LandingPage(props) {
               </Grid>
             </Grid>
           </Grid>
+          <LazyLoadComponent threshold={850}>
+            <div className={classes.infoBackground} />
+          </LazyLoadComponent>
         </Grid>
       </Grid>
       <Grid item>
-        {/*-----Call To Action Block-----*/}
-        <CallToAction setValue={props.setValue} />
+        <LazyLoadComponent threshold={850} >
+          {/*-----Call To Action Block-----*/}
+          <CallToAction setValue={props.setValue} />
+        </LazyLoadComponent>
       </Grid>
     </Grid>
   );

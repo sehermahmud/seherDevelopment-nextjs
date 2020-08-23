@@ -6,6 +6,8 @@ import Theme from "../src/ui/Theme";
 import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";
 
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
 export default class MyApp extends App {
   constructor(props) {
     super(props);
@@ -13,11 +15,11 @@ export default class MyApp extends App {
     this.state = { value: 0, selectedIndex: 0 };
   }
 
-  setValue = index => {
+  setValue = (index) => {
     this.setState({ value: index });
   };
 
-  setSelectedIndex = index => {
+  setSelectedIndex = (index) => {
     this.setState({ selectedIndex: index });
   };
 
@@ -53,10 +55,12 @@ export default class MyApp extends App {
             setSelectedIndex={this.setSelectedIndex}
             setValue={this.setValue}
           />
-          <Footer
-            setSelectedIndex={this.setSelectedIndex}
-            setValue={this.setValue}
-          />
+          <LazyLoadComponent threshold={400}>
+            <Footer
+              setSelectedIndex={this.setSelectedIndex}
+              setValue={this.setValue}
+            />
+          </LazyLoadComponent>
         </ThemeProvider>
       </React.Fragment>
     );
