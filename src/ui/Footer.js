@@ -3,6 +3,8 @@ import Link from "../Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -248,45 +250,51 @@ export default function Footer(props) {
         spacing={2}
         className={classes.socialContainer}
       >
-        <Grid
-          item
-          component={"a"}
-          href="https://www.facebook.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="facebook logo"
-            src="/assets/facebook.svg"
-            className={classes.icon}
-          />
-        </Grid>
-        <Grid
-          item
-          component={"a"}
-          href="https://www.twitter.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="twitter logo"
-            src="/assets/twitter.svg"
-            className={classes.icon}
-          />
-        </Grid>
-        <Grid
-          item
-          component={"a"}
-          href="https://www.instagram.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            alt="instagram logo"
-            src="/assets/instagram.svg"
-            className={classes.icon}
-          />
-        </Grid>
+        <Tooltip title="facebook" TransitionComponent={Zoom} arrow>
+          <Grid
+            item
+            component={"a"}
+            href="https://www.facebook.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="facebook logo"
+              src="/assets/facebook.svg"
+              className={classes.icon}
+            />
+          </Grid>
+        </Tooltip>
+        <Tooltip title="twitter" TransitionComponent={Zoom} arrow>
+          <Grid
+            item
+            component={"a"}
+            href="https://www.twitter.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="twitter logo"
+              src="/assets/twitter.svg"
+              className={classes.icon}
+            />
+          </Grid>
+        </Tooltip>
+        <Tooltip title="instagram" TransitionComponent={Zoom} arrow>
+          <Grid
+            item
+            component={"a"}
+            href="https://www.instagram.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="instagram logo"
+              src="/assets/instagram.svg"
+              className={classes.icon}
+            />
+          </Grid>
+        </Tooltip>
       </Grid>
     </footer>
   );
