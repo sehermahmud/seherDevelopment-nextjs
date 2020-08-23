@@ -53,16 +53,8 @@ export default function Websites(props) {
           content="Bringing West Coast Technology to the Bangladesh | Websites Development"
           key="og:title"
         />
-        <meta
-          property="og:url"
-          key="og:url"
-          content="https://seher-development.vercel.app/websites"
-        />
-        <link
-          rel="canonical"
-          key="canonical"
-          href="https://seher-development.vercel.app/websites"
-        />
+        <meta property="og:url" key="og:url" content="https://seher-development.vercel.app/websites" />
+        <link rel="canonical" key="canonical" href="https://seher-development.vercel.app/websites" />
       </Head>
       <Grid
         item
@@ -93,15 +85,7 @@ export default function Websites(props) {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography
-              align={matchesMD ? "center" : undefined}
-              variant="h1"
-              style={{
-                lineHeight: matchesXS ? 1.1 : null,
-                marginBottom: matchesXS ? "0.5em" : null,
-                fontSize: "2.25em",
-              }}
-            >
+            <Typography align={matchesMD ? "center" : undefined} variant="h1">
               Website Development
             </Typography>
           </Grid>
@@ -195,10 +179,7 @@ export default function Websites(props) {
               </Typography>
             </Grid>
             <Grid item>
-              <img
-                src="/assets/ecommerce.svg"
-                alt="world outline made of dollar signs"
-              />
+              <img src="/assets/ecommerce.svg" alt="world outline made of dollar signs" />
             </Grid>
           </Grid>
         </Grid>
@@ -259,7 +240,7 @@ export default function Websites(props) {
           </Typography>
         </Grid>
       </Grid>
-      <Grid
+			<Grid
         item
         container
         direction={matchesSM ? "column" : "row"}
@@ -278,10 +259,7 @@ export default function Websites(props) {
               </Typography>
             </Grid>
             <Grid item>
-              <img
-                src="/assets/seo.svg"
-                alt="website standing on winner's podium"
-              />
+              <img src="/assets/seo.svg" alt="website standing on winner's podium" />
             </Grid>
           </Grid>
         </Grid>
@@ -314,7 +292,7 @@ export default function Websites(props) {
           </Typography>
         </Grid>
       </Grid>
-      <Grid item>
+			<Grid item>
         <CallToAction setValue={props.setValue} />
       </Grid>
     </Grid>

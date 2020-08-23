@@ -105,11 +105,7 @@ export default function MobileApps(props) {
             <Typography
               align={matchesMD ? "center" : undefined}
               variant="h1"
-              style={{
-                lineHeight: matchesXS ? 1.1 : null,
-                marginBottom: matchesXS ? "0.5em" : null,
-                fontSize: "2.25em",
-              }}
+              style={{ lineHeight: matchesXS ? 1.1 : null, marginBottom: matchesXS ? "0.5em" : null, fontSize: "2.25em"}}
             >
               iOS/Android App Development
             </Typography>

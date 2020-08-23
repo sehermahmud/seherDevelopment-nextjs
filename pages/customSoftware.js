@@ -309,7 +309,7 @@ export default function CustomSoftware(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md style={{marginTop: matchesSM ? "2em" : null}}> 
+          <Grid item md style={{ marginTop: matchesSM ? "2em" : null }}>
             <Lottie
               options={documentsOptions}
               isStopped={false}
@@ -330,7 +330,7 @@ export default function CustomSoftware(props) {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md style={{marginBottom: matchesSM ? "2em" : null}}>
+          <Grid item md style={{ marginBottom: matchesSM ? "2em" : null }}>
             <Lottie
               options={scaleOptions}
               isStopped={false}
@@ -437,7 +437,7 @@ export default function CustomSoftware(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md style={{marginTop: matchesSM ? "2em" : null}}>
+          <Grid item md style={{ marginTop: matchesSM ? "2em" : null }}>
             <Lottie
               options={automationOptions}
               isStopped={false}
@@ -452,7 +452,7 @@ export default function CustomSoftware(props) {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md style={{marginBottom: matchesSM ? "2em" : null}}>
+          <Grid item md style={{ marginBottom: matchesSM ? "2em" : null }}>
             <Lottie
               options={uxOptions}
               isStopped={false}

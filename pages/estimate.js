@@ -310,7 +310,7 @@ export default function Estimate() {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const myRef = useRef(null);
+  const myRef = useRef(null)
 
   const [questions, setQuestions] = useState(defaultQuestions);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -353,7 +353,7 @@ export default function Estimate() {
 
   const nextQuestion = () => {
     if (matchesSM) {
-      window.scrollTo(0, myRef.current.offsetTop + 75);
+      window.scrollTo(0, myRef.current.offsetTop + 75)
     }
 
     const newQuestions = cloneDeep(questions);
@@ -369,9 +369,9 @@ export default function Estimate() {
 
   const previousQuestion = () => {
     if (matchesSM) {
-      window.scrollTo(0, myRef.current.offsetTop + 75);
+      window.scrollTo(0, myRef.current.offsetTop + 75)
     }
-
+    
     const newQuestions = cloneDeep(questions);
     const currentlyActive = newQuestions.filter((question) => question.active);
     const activeIndex = currentlyActive[0].id - 1;
@@ -428,7 +428,7 @@ export default function Estimate() {
     switch (newSelected.title) {
       case "Custom Software Development":
         if (matchesSM) {
-          window.scrollTo(0, myRef.current.offsetTop + 75);
+          window.scrollTo(0, myRef.current.offsetTop + 75)
         }
         setQuestions(softwareQuestions);
         setService(newSelected.title);
@@ -440,7 +440,7 @@ export default function Estimate() {
         break;
       case "iOS/Android App Development":
         if (matchesSM) {
-          window.scrollTo(0, myRef.current.offsetTop + 75);
+          window.scrollTo(0, myRef.current.offsetTop + 75)
         }
         setQuestions(softwareQuestions);
         setService(newSelected.title);
@@ -452,7 +452,7 @@ export default function Estimate() {
         break;
       case "Website Development":
         if (matchesSM) {
-          window.scrollTo(0, myRef.current.offsetTop + 75);
+          window.scrollTo(0, myRef.current.offsetTop + 75)
         }
         setQuestions(websiteQuestions);
         setService(newSelected.title);
@@ -648,8 +648,7 @@ export default function Estimate() {
       .filter(
         (question) => question.title === "Which features do you expect to use?"
       )
-      .map((question) => question.options.filter((option) => option.selected))
-      .filter((selections) => selections.length > 0);
+      .map((question) => question.options.filter((option) => option.selected)).filter(selections => selections.length > 0)
 
     if (questions.length === 2) {
       if (emptySelections.length === 1) {
@@ -657,7 +656,9 @@ export default function Estimate() {
       }
     } else if (questions.length === 1) {
       disabled = true;
-    } else if (emptySelections.length === 1 && featuresSelected.length > 0) {
+    } else if (
+      emptySelections.length === 1 && featuresSelected.length > 0 
+    ) {
       disabled = false;
     }
 
